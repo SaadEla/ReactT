@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Ninjas from './Ninjas';
+import AddNinja from './AddNinja';
 import './App.css';
 
 class App extends Component {
@@ -13,8 +13,8 @@ class App extends Component {
 render() {
   return (
     <div className="App">
-      hello app.js
-      <Ninjas ninjas={this.state.ninjas}/>
+      <p> hello app.js</p>
+      <AddNinja ninjas={this.state.ninjas}/>
     </div>
   );
 }
