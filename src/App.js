@@ -19,8 +19,16 @@ class App extends Component {
   on modifie le state directement
  */ 
   addNinja = (ninja)=>{
-    ninja.id=Math.random();
+    ninja.id=Math.random()*10;
     let ninjas = [...this.state.ninjas, ninja];
+    this.setState({
+      ninjas: ninjas
+    });
+  }
+  deleteNinja = (id)=> {
+    let ninjas=this.state.ninjas.filter((xx)=>{
+      return xx.id !== id
+    });
     this.setState({
       ninjas: ninjas
     });
@@ -29,7 +37,7 @@ render() {
   return (
     <div className="App">
       <p> hello app.js</p>
-      <Ninjas ninjas={this.state.ninjas}/>
+      <Ninjas deleteNinja={this.deleteNinja} ninjas={this.state.ninjas}/>
       <AddNinja addNinja={this.addNinja}/>
     </div>
   );

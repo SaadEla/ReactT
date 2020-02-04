@@ -5,14 +5,15 @@ import './App.css';
 //Et blach mn this car c'est plus une instance 9ssadha nichan PFF
 const Ninjas = (props)=>{
     //DESTRUCTERING
-    const { ninjas } = props;
+    const { ninjas, deleteNinja } = props;
     const ninjaList= ninjas.filter((ninja)=> ninja.age > 20)    
             .map((ninja)=>{
             return (
             <div className="ninja" key={ninja.id}>
-                <div>{ ninja.name }</div>
-                <div>{ ninja.age }</div>  
-                <div>{ ninja.belt }</div>
+                <div>Name: { ninja.name }</div>
+                <div>Age: { ninja.age }</div>  
+                <div>Belt: { ninja.belt }</div>
+                <button onClick={() => {deleteNinja(ninja.id)}}>Delete Ninja</button>
             </div>
             )
         })
