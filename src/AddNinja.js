@@ -6,6 +6,8 @@ class AddNinja extends Component {
     age: null,
     belt: null
   }
+  //how to get a props
+  //ninjas  = this.props;
   handleChange = (e) => {
     // console.log(e.target.id, e.target.value);
     this.setState({
@@ -14,7 +16,7 @@ class AddNinja extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    this.props.addNinja(this.state);
   }
   render() {
     return (
